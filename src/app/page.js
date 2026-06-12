@@ -80,8 +80,8 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section — scoped wrapper for background art */}
-      <section className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bottom-24 z-0 select-none pointer-events-none">
+      <section className="relative min-h-[82vh] overflow-hidden">
+        <div className="absolute inset-0 z-0 select-none pointer-events-none">
           <Image
             src="/hero-bg2.png"
             alt="Watercolor misty mountains background"
@@ -93,7 +93,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <main className="max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-20 md:pt-48 md:pb-32 min-h-screen flex flex-col justify-center relative z-10">
+        <main className="max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16 md:pt-36 md:pb-24 min-h-[82vh] flex flex-col justify-center relative z-10">
           <div className="max-w-3xl flex flex-col items-start -translate-y-6 md:-translate-y-8">
 
             {/* Upper Subheading */}
@@ -141,19 +141,20 @@ export default function Home() {
       </section>
 
       {/* Tech Stack Marquee Section */}
-      <section className="py-16 bg-[#EEEEE0] overflow-hidden select-none border-t border-neutral-200/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-10">
-          <p className="font-mono text-[11px] font-light tracking-[0.25em] text-[#6b6b66] uppercase">
-            WORK WITH
-          </p>
-        </div>
+      <section className="pt-16 pb-0 bg-[#EEEEE0] select-none border-t border-neutral-200/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
+          <div className="text-center mb-10">
+            <p className="font-mono text-[11px] font-light tracking-[0.25em] text-[#6b6b66] uppercase">
+              WORK WITH
+            </p>
+          </div>
 
-        <div className="marquee-container relative w-full overflow-hidden flex py-4">
-          {/* Edge gradient mask for smooth fade out */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#EEEEE0] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#EEEEE0] to-transparent z-10 pointer-events-none" />
+          <div className="marquee-container relative w-full overflow-hidden flex py-4 mb-12">
+            {/* Edge gradient mask for smooth fade out */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-[#EEEEE0] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-[#EEEEE0] to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee flex items-center w-max will-change-transform">
+            <div className="animate-marquee flex items-center w-max will-change-transform">
             {/* Set 1 */}
             <div className="flex items-center gap-16 pr-16 shrink-0">
               {techItems.map((tech, idx) => (
@@ -180,15 +181,127 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+          {/* Thin divider line matching the initial navbar size */}
+          <div className="border-t border-[#111110]/10 w-full" />
+        </div>
       </section>
 
-      {/* Placeholder content sections for scrolling page to test navbar morphing */}
-      <section id="work" className="min-h-screen bg-[#EEEEE0] text-[#111110] py-32 px-6 md:px-12 flex items-center justify-center">
-        <div className="max-w-4xl text-center">
-          <h2 className="text-3xl md:text-5xl font-serif mb-6">Our Work</h2>
-          <p className="text-[#6b6b66] text-lg max-w-xl mx-auto">
-            Selected projects designed and built to drive conversions and establish category leadership.
+      {/* Selected Work Section */}
+      <section id="work" className="pt-16 pb-24 md:pt-20 md:pb-32 bg-[#EEEEE0] text-[#111110]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          
+          {/* Section Label */}
+          <div className="flex items-center gap-1.5 mb-8 select-none">
+            <span className="font-mono text-[#ff3b00] text-[13px] font-medium">/</span>
+            <span className="font-mono text-[11px] font-light tracking-[0.2em] text-[#6b6b66] uppercase">
+              SELECTED WORK
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="font-sans text-[36px] leading-[1.15] md:text-[56px] md:leading-[1.1] font-light tracking-tight text-[#111110] mb-6 max-w-md">
+            A few things I've built recently.
+          </h2>
+
+          {/* Subheading Description */}
+          <p className="max-w-2xl text-lg md:text-[19px] text-[#6b6b66] font-light leading-[1.6] select-text">
+            Real clients, real positioning. Each page was built to earn trust.
           </p>
+
+          {/* Work Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 mt-16">
+
+            {/* Card 1 — Dr. Maya Reynolds */}
+            <div className="group">
+              <div className="overflow-hidden rounded-2xl cursor-pointer mb-5">
+                <Image
+                  src="/work-1.png"
+                  alt="Dr. Maya Reynolds — Therapy landing page"
+                  width={720}
+                  height={480}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Web Design</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Framer Dev</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Branding</span>
+              </div>
+              <h3 className="font-sans text-[20px] md:text-[22px] font-medium text-[#111110] mb-2 tracking-tight">Dr. Maya Reynolds</h3>
+              <p className="text-[15px] text-[#6b6b66] font-light leading-[1.6] max-w-md">
+                A therapist in Santa Monica needed a landing page that felt as warm as her practice. Built a serene, evidence-based page to turn visitors into consultations — without feeling clinical.
+              </p>
+            </div>
+
+            {/* Card 2 — SV Construction */}
+            <div className="group">
+              <div className="overflow-hidden rounded-2xl mb-5">
+                <Image
+                  src="/work-2.png"
+                  alt="SV Construction — Construction company landing page"
+                  width={720}
+                  height={480}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Web Design</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Framer Dev</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Positioning</span>
+              </div>
+              <h3 className="font-sans text-[20px] md:text-[22px] font-medium text-[#111110] mb-2 tracking-tight">SV Construction</h3>
+              <p className="text-[15px] text-[#6b6b66] font-light leading-[1.6] max-w-md">
+                A construction firm with 15+ years and 250+ projects had no online presence matching their reputation. Designed a bold, trust-first page that positions them as premium builders — not just another contractor.
+              </p>
+            </div>
+
+            {/* Card 3 — Oasis */}
+            <div className="group">
+              <div className="overflow-hidden rounded-2xl mb-5">
+                <Image
+                  src="/work-3.png"
+                  alt="Oasis — Mental health platform landing page"
+                  width={720}
+                  height={480}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Web Design</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Framer Dev</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">AI Apps</span>
+              </div>
+              <h3 className="font-sans text-[20px] md:text-[22px] font-medium text-[#111110] mb-2 tracking-tight">Oasis</h3>
+              <p className="text-[15px] text-[#6b6b66] font-light leading-[1.6] max-w-md">
+                A mental health startup wanted their landing page to feel like a deep breath. Crafted a calm, nature-inspired experience that earns trust at first glance — and drives demo bookings without pressure.
+              </p>
+            </div>
+
+            {/* Card 4 — CoinTracker */}
+            <div className="group">
+              <div className="overflow-hidden rounded-2xl mb-5">
+                <Image
+                  src="/work-4.png"
+                  alt="CoinTracker — Crypto price tracker landing page"
+                  width={720}
+                  height={480}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Web Design</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">Next.js Dev</span>
+                <span className="font-mono text-[10px] tracking-[0.15em] text-[#6b6b66] uppercase border border-[#6b6b66]/20 rounded-full px-3 py-1">AI Apps</span>
+              </div>
+              <h3 className="font-sans text-[20px] md:text-[22px] font-medium text-[#111110] mb-2 tracking-tight">CoinTracker</h3>
+              <p className="text-[15px] text-[#6b6b66] font-light leading-[1.6] max-w-md">
+                A fintech product needed a fast, sharp interface for real-time crypto prices. Built a sleek dashboard landing with live search, interactive charts, and a dark-to-purple gradient that feels native to the crypto space.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
