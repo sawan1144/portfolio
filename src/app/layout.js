@@ -21,6 +21,11 @@ const instrumentSerif = Instrument_Serif({
 export const metadata = {
   title: "sleek.studio",
   description: "An AI first studio & top 1% creator",
+  icons: {
+    icon: "/fevi-con.png",
+    shortcut: "/fevi-con.png",
+    apple: "/fevi-con.png",
+  },
 };
 
 export default function RootLayout({ children }) {
