@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #FAF9F6;
   --foreground: #111110;
@@ -38,4 +42,51 @@ body {
 
 .marquee-container:hover .animate-marquee {
   animation-play-state: paused;
+}
+
+/* Page load animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-delay-100 { animation-delay: 150ms; }
+.animate-delay-200 { animation-delay: 300ms; }
+.animate-delay-300 { animation-delay: 450ms; }
+.animate-delay-400 { animation-delay: 600ms; }
+.animate-delay-500 { animation-delay: 750ms; }
+.animate-delay-600 { animation-delay: 900ms; }
+.animate-delay-700 { animation-delay: 1050ms; }
+.animate-delay-800 { animation-delay: 1200ms; }
+
+/* Navbar fade-down entrance */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-fade-down {
+  animation: fadeDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
 }
