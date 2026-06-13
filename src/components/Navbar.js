@@ -29,8 +29,8 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed z-50 left-1/2 -translate-x-1/2 flex items-center justify-between will-change-[width,top,border-radius,background-color,box-shadow] animate-fade-down ${isScrolled
-          ? "top-8 w-[90%] max-w-5xl bg-[#EEEEE0]/85 border border-neutral-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur-lg py-3 px-6 rounded-full transition-all duration-500 ease-in-out"
-          : "top-0 w-full max-w-7xl py-6 px-6 md:px-12 bg-transparent border border-transparent rounded-none transition-all duration-500 ease-in-out"
+        ? "top-8 w-[90%] max-w-5xl bg-[#EEEEE0]/85 border border-neutral-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] backdrop-blur-lg py-3 px-6 rounded-full transition-all duration-500 ease-in-out"
+        : "top-0 w-full max-w-7xl py-6 px-6 md:px-12 bg-transparent border border-transparent rounded-none transition-all duration-500 ease-in-out"
         }`}
     >
       {/* Logo Section */}
